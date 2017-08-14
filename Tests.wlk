@@ -89,3 +89,19 @@ test "Fantino hace opinar a Lizzy Tagliani sobre deportes quedando el humor de L
 fantino.hacerOpinarDeDeportesA(lizzyTagliani)
 assert.equals(40,lizzyTagliani.humor())
 }
+
+test "Polino hace opinar a Horacio Pagani sobre chimentos quedando el nivel de enojo de Pagani en 90"{
+polino.hacerOpinarDeChimentosA(horacioPagani)
+assert.equals(90,horacioPagani.nivelDeEnojo())
+}
+test "Polino hace opinar a Toti Pasman sobre chimentos quedando la soberbia Toti igual a 0"{
+polino.hacerOpinarDeChimentosA(totiPasman)
+assert.equals(0,totiPasman.soberbia())
+}
+test "Polino hace opinar a Toti Pasman sobre chimentos quedando Toti sin sed"{
+polino.hacerOpinarDeChimentosA(totiPasman)
+assert.that(!totiPasman.tieneSed())
+}
+test "Polino hace opinar a Lizzy Tagliani sobre chimentos quedando el humor de Lizzy igual a 20"{
+polino.hacerOpinarDeChimentosA(lizzyTagliani)
+assert.equals(20,lizzyTagliani.humor())
