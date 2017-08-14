@@ -1,5 +1,5 @@
 object horacioPagani {
-	var nivelDeEnojo
+	var nivelDeEnojo = 100
 
 	method elevarVoz() {
 		self.aumentarNivelDeEnojo(10)
