@@ -72,3 +72,20 @@ test "Lizzy Tagliani se calma 10 minutos, pero como no estaba de mal humor, su h
 lizzyTagliani.calmarse(10)
 assert.equals(10,lizzyTagliani.humor())
 }
+
+test "Fantino hace opinar a Horacio Pagani sobre deportes quedando el nivel de enojo de Pagani igual a 89"{
+fantino.hacerOpinarDeDeportesA(horacioPagani)
+assert.equals(89.10,horacioPagani.nivelDeEnojo())
+}
+test "Fantino hace opinar a Toti Pasman sobre deportes quedando la soberbia de Toti igual a 0"{
+fantino.hacerOpinarDeDeportesA(totiPasman)
+assert.equals(0,totiPasman.soberbia())
+}
+test "Fantino hace opinar a Toti Pasman sobre deportes quedando Toti sin sed"{
+fantino.hacerOpinarDeDeportesA(totiPasman)
+assert.that(!totiPasman.tieneSed())
+}
+test "Fantino hace opinar a Lizzy Tagliani sobre deportes quedando el humor de Lizzy en 40"{
+fantino.hacerOpinarDeDeportesA(lizzyTagliani)
+assert.equals(40,lizzyTagliani.humor())
+}
