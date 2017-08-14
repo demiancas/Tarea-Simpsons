@@ -17,3 +17,8 @@ assert.equals(90,horacioPagani.nivelDeEnojo())
 test "Horacio Pagani esta caliente ya que su nivel de enojo (100) es mayor a 20"{
 assert.that(horacioPagani.estaCaliente())
 }
+
+test "Horacio Pagani se calma 10 minutos pero ya esta caliente, por lo tanto, no modifica su nivel de enojo"{
+horacioPagani.calmarse(10)
+assert.equals(100,horacioPagani.nivelDeEnojo())
+}
