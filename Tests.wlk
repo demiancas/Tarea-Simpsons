@@ -13,3 +13,7 @@ test "Horacio Pagani toma agua 1 vez, y su nivel de enojo queda en 90"{
 horacioPagani.tomarAgua()
 assert.equals(90,horacioPagani.nivelDeEnojo())
 }
+
+test "Horacio Pagani esta caliente ya que su nivel de enojo (100) es mayor a 20"{
+assert.that(horacioPagani.estaCaliente())
+}
