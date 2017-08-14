@@ -106,3 +106,11 @@ object fantino {
 		} unPanelista.calmarse(10)
 	}
 }
+
+object polino {
+
+	method hacerOpinarDeChimentosA(unPanelista) {
+		unPanelista.calmarse(5)
+		unPanelista.tomarAgua()
+	}
+}
