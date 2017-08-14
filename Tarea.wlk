@@ -53,8 +53,8 @@ object totiPasman {
 		self.disminuirSoberbia(unosMinutos * 2)
 	}
 
-	method disminuirSoberbia(unaCantidad) {
-		soberbia -= unaCantidad
+	method disminuirNivelDeEnojo(unaCantidad) {
+	nivelDeEnojo = 0.max(nivelDeEnojo - unaCantidad)
 	}
 
 	method aumentarSoberbia(unaCantidad) {
