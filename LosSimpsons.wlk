@@ -23,6 +23,9 @@ object springfield {
 	method cumpleNecesidad(){
 		return necesidadSuministro == centrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
 	}
+	method sonTodasContaminantes(){
+		centrales.all({unaCentral=>unaCentral.estaContaminando()})
+	}
 }
 
 object centralAtomica {
