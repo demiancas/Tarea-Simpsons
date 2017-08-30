@@ -1,4 +1,7 @@
 
+object region{
+	var ciudades = []
+}
 //CIUDADES
 object springfield {
 	var velocidadViento = 10
