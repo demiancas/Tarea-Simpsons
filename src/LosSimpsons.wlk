@@ -4,9 +4,7 @@ object region1{
 	method agregarCiudad(unaCiudad){
 		ciudadesEnRegion.add(unaCiudad)
 	}
-	method centralMasProductoraPorCiudad(){
-		
-	}
+
 }
 //CIUDADES
 object springfield {
@@ -42,6 +40,9 @@ object springfield {
 	}
 	method sonTodasContaminantes(){
 		return centrales.all({unaCentral=>unaCentral.estaContaminando()})
+	}
+	method centralMasProductora(){
+		return centrales.fold({centralAtomica, unaCentral,otraCentral=> unaCentral.produccionEnergetica()>otraCentral.produccionEnergetica()})
 	}
 }
 object albuquerque{
