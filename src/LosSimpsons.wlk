@@ -102,3 +102,6 @@ object turbina1{
 		 return 0.2 * springfield.velocidadViento()
 	}		 
 }
+object centralHidroelectrica{
+	
+}
