@@ -4,6 +4,9 @@ object region1{
 	method agregarCiudad(unaCiudad){
 		ciudadesEnRegion.add(unaCiudad)
 	}
+	method centralMasProductoraPorCiudad(){
+		
+	}
 }
 //CIUDADES
 object springfield {
