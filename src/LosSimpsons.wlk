@@ -1,6 +1,6 @@
 
 object region{
-	var ciudades = []
+	var ciudadesEnRegion = []
 }
 //CIUDADES
 object springfield {
