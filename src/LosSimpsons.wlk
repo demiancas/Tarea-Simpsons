@@ -38,6 +38,13 @@ object springfield {
 object albuquerque{
 	var caudalDeRio = 150
 	var central = centralHidroelectrica
+	
+		method caudalDeRio(){
+		return caudalDeRio
+	}
+	method central(unaCentral){
+		central = unaCentral
+	}
 }
 //CENTRALES
 object centralAtomica {
