@@ -5,7 +5,7 @@ object region1{
 		ciudadesEnRegion.add(unaCiudad)
 	}
 	method centralMasProductoraPorCiudad(){
-		ciudadesEnRegion.forEach({unaCiudad=>unaCiudad.})
+		ciudadesEnRegion.forEach({unaCiudad=>unaCiudad.centralMasProductora()})
 	}
 }
 //CIUDADES
