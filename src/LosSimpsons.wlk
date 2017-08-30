@@ -44,7 +44,14 @@ object springfield {
 		return centrales.all({unaCentral=>unaCentral.estaContaminando()})
 	}
 	method centralMasProductora(){
-		return centrales.fold({centralAtomica, unaCentral,otraCentral=> unaCentral.produccionEnergetica()>otraCentral.produccionEnergetica()})
+		return centrales.fold(centrales.head(),{unaCentral,otraCentral=> self.produceMas(unaCentral,otraCentral) })
+	}
+	method produceMas(unaCentral,otraCentral){
+		if(unaCentral.produccionEnergetica() > otraCentral.produccionEnergetica() ){
+			return unaCentral
+		}else{
+			return otraCentral
+		}
 	}
 }
 object albuquerque{
