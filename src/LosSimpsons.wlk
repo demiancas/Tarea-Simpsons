@@ -35,7 +35,10 @@ object springfield {
 		return centrales.all({unaCentral=>unaCentral.estaContaminando()})
 	}
 }
-
+object albuquerque{
+	var caudalDeRio = 150
+	var central = centralHidroelectrica
+}
 //CENTRALES
 object centralAtomica {
 	var cantVarillas = 0
@@ -92,4 +95,3 @@ object turbina1{
 		 return 0.2 * springfield.velocidadViento()
 	}		 
 }
-
