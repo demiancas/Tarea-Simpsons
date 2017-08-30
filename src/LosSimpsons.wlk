@@ -104,6 +104,9 @@ object turbina1{
 }
 object centralHidroelectrica{
 	var produccionEnergetica = 0
+	method producirEnergia(){
+		produccionEnergetica += 2 * albuquerque.caudalDeRio()
+	}
 	method produccionEnergetica(){
 		return produccionEnergetica
 	}
