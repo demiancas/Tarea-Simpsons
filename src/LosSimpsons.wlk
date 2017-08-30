@@ -1,4 +1,5 @@
 
+//CIUDADES
 object springfield {
 	var velocidadViento = 10
 	var riquezaSuelo = 0.9
@@ -35,6 +36,7 @@ object springfield {
 	}
 }
 
+//CENTRALES
 object centralAtomica {
 	var cantVarillas = 0
 	var produccionEnergetica = 0
@@ -51,7 +53,6 @@ object centralAtomica {
 		return produccionEnergetica
 	}
 }
-
 object centralCarbon{
 	var capacidad = 0
 	var produccionEnergetica = 0
@@ -69,7 +70,6 @@ object centralCarbon{
 		return produccionEnergetica
 	}
 }
-
 object centralEolica{
 	var turbinas = [turbina1]
 	var produccionEnergetica = 0
