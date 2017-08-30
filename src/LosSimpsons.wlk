@@ -103,5 +103,8 @@ object turbina1{
 	}		 
 }
 object centralHidroelectrica{
-	
+	var produccionEnergetica = 0
+	method produccionEnergetica(){
+		return produccionEnergetica
+	}
 }
