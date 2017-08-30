@@ -1,6 +1,9 @@
 
 object region{
 	var ciudadesEnRegion = []
+	method agregarCiudad(unaCiudad){
+		ciudadesEnRegion.add(unaCiudad)
+	}
 }
 //CIUDADES
 object springfield {
