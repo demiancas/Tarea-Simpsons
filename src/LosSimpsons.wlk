@@ -4,7 +4,9 @@ object region1{
 	method agregarCiudad(unaCiudad){
 		ciudadesEnRegion.add(unaCiudad)
 	}
-
+	method centralMasProductoraPorCiudad(){
+		ciudadesEnRegion.forEach({unaCiudad=>unaCiudad.})
+	}
 }
 //CIUDADES
 object springfield {
@@ -54,6 +56,9 @@ object albuquerque{
 	}
 	method central(unaCentral){
 		central = unaCentral
+	}
+	method centralMasProductora(){
+		return central
 	}
 }
 //CENTRALES
