@@ -107,8 +107,8 @@ object centralEolica{
 	method estaContaminando(){
 		return false
 	}
-	method producirEnergia(){
-		produccionEnergetica += turbinas.sum({unaTurbina=>unaTurbina.produccionTurbina()})
+	method producirEnergia(ciudadQueSeEncuentra){
+		produccionEnergetica += turbinas.sum({unaTurbina=>unaTurbina.produccionTurbina(ciudadQueSeEncuentra)})
 		
 	}
 	method produccionEnergetica(){
