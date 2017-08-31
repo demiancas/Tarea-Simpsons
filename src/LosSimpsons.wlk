@@ -85,8 +85,8 @@ object centralCarbon{
 	method capacidad(unaCapacidad){
 		capacidad = unaCapacidad
 	}
-	method producirEnergia(){
-		produccionEnergetica += (capacidad * springfield.riquezaSuelo()) + 0.5
+	method producirEnergia(ciudadQueSeEncuentra){
+		produccionEnergetica += (capacidad * ciudadQueSeEncuentra.riquezaSuelo()) + 0.5
 	}
 	method estaContaminando(){
 		return true
@@ -113,14 +113,14 @@ object centralEolica{
 	}
 }
 object turbina1{
-	method produccionTurbina(){
-		 return 0.2 * springfield.velocidadViento()
+	method produccionTurbina(ciudadQueSeEncuentra){
+		 return 0.2 * ciudadQueSeEncuentra.velocidadViento()
 	}		 
 }
 object centralHidroelectrica{
 	var produccionEnergetica = 0
-	method producirEnergia(){
-		produccionEnergetica += 2 * albuquerque.caudalDeRio()
+	method producirEnergia(ciudadQueSeEncuentra){
+		produccionEnergetica += 2 * ciudadQueSeEncuentra.caudalDeRio()
 	}
 	method produccionEnergetica(){
 		return produccionEnergetica
