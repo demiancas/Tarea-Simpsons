@@ -23,6 +23,7 @@ test "las centrales contaminantes de sprinfield es una colección que adentro tie
 }
 
 test "Teniendo las centrales anteriores, springfield cubrió su necesidad energética si ésta era de 20 Mkwh"{
-	springfield.necesidadSuministro(30)
-	assert.that(springfield.estaEnElHorno())
+	springfield.necesidadSuministro(20)
+	assert.that(springfield.cumpleNecesidad())
 }
+
