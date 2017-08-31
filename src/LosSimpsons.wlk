@@ -34,7 +34,7 @@ object springfield {
 		return self.sonTodasContaminantes() || self.aportanMasDel50()
 	}
 	method cumpleNecesidad(){
-		return necesidadSuministro >= centrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
+		return necesidadSuministro >= self.produccionTotal(centrales)
 	}
 	method aportanMasDel50(){
 		return necesidadSuministro >= (self.sonContaminantes().map({unaCentral=>unaCentral.produccionEnergetica()}).sum())*0.5
@@ -47,7 +47,7 @@ object springfield {
 		return centrales.max({unaCentral=>unaCentral.produccionEnergetica()})
 	}
 	method produccionTotal(listaDeCentrales){
-		listaDeCentrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
+		return listaDeCentrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
 	}
 }
 object albuquerque{
