@@ -6,4 +6,8 @@ test "centralAtomica con 10 varillas produce 1 Mkwh en springfield" {
 
 }
 
-
+test "centralCarbon con una capacidad de 20 toneladas produce 18.5 Mkwh en springfield" {
+	centralCarbon.capacidad(20)
+	centralCarbon.producirEnergia(springfield)
+	assert.equals(18.5,centralCarbon.produccionEnergetica())
+}
