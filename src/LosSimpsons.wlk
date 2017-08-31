@@ -46,6 +46,9 @@ object springfield {
 	method centralMasProductora(){
 		return centrales.max({unaCentral=>unaCentral.produccionEnergetica()})
 	}
+	method produccionTotal(listaDeCentrales){
+		listaDeCentrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
+	}
 }
 object albuquerque{
 	var caudalDeRio = 150
