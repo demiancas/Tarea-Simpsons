@@ -19,10 +19,5 @@ test "centralEolica produce 2 Mkwh en springfield"{
 }
 
 test "las centrales contaminantes de sprinfield es una colección que adentro tiene sólo a centralCarbon, teniendo en cuenta los datos cargados anteriormente en los test"{
-	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
-	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	centralEolica.producirEnergia(springfield)
 	assert.equals([centralCarbon], springfield.sonContaminantes())
 }
