@@ -1,6 +1,9 @@
-
-test "testX" {
-
-	assert.that(true)
+import LosSimpsons.*
+test "centralAtomica con 10 varillas produce 1 Mkwh en springfield" {
+	centralAtomica.cantVarillas(10)
+	centralAtomica.producirEnergia()
+	assert.equals(1,centralAtomica.produccionEnergetica())
 
 }
+
+
