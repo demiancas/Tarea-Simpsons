@@ -46,13 +46,6 @@ object springfield {
 	method centralMasProductora(){
 		return centrales.max({unaCentral=>unaCentral.produccionEnergetica()})
 	}
-	method produceMas(unaCentral,otraCentral){
-		if(unaCentral.produccionEnergetica() > otraCentral.produccionEnergetica() ){
-			return unaCentral
-		}else{
-			return otraCentral
-		}
-	}
 }
 object albuquerque{
 	var caudalDeRio = 150
