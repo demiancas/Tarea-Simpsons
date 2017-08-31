@@ -27,3 +27,7 @@ test "Teniendo las centrales anteriores, springfield cubrió su necesidad energét
 	assert.that(springfield.cumpleNecesidad())
 }
 
+test "Teniendo las centrales anteriores, springfield está al horno si posee una necesidad energética de 30 Mkwh"{
+	springfield.necesidadSuministro(30)
+	assert.that(springfield.estaEnElHorno())
+}
