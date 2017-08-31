@@ -1,5 +1,5 @@
 
-object region1{
+object regionSpringfield{
 	var ciudadesEnRegion = [springfield,albuquerque]
 	method agregarCiudad(unaCiudad){
 		ciudadesEnRegion.add(unaCiudad)
