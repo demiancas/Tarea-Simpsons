@@ -37,7 +37,7 @@ object springfield {
 		return necesidadSuministro >= self.produccionTotal(centrales)
 	}
 	method aportanMasDel50(){
-		return necesidadSuministro >= (self.sonContaminantes().map({unaCentral=>unaCentral.produccionEnergetica()}).sum())*0.5
+		return necesidadSuministro >= self.produccionTotal(self.sonContaminantes())*0.5
 	
 	}
 	method sonTodasContaminantes(){
