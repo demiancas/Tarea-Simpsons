@@ -34,10 +34,10 @@ object springfield {
 		return self.sonTodasContaminantes() || self.aportanMasDel50()
 	}
 	method cumpleNecesidad(){
-		return necesidadSuministro >= self.produccionTotal(centrales)
+		return necesidadSuministro <= self.produccionTotal(centrales)
 	}
 	method aportanMasDel50(){
-		return necesidadSuministro >= self.produccionTotal(self.sonContaminantes())*0.5
+		return necesidadSuministro*0.5 <= self.produccionTotal(self.sonContaminantes())
 	
 	}
 	method sonTodasContaminantes(){
