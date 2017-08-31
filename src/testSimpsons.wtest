@@ -21,3 +21,8 @@ test "centralEolica produce 2 Mkwh en springfield"{
 test "las centrales contaminantes de sprinfield es una colección que adentro tiene sólo a centralCarbon, teniendo en cuenta los datos cargados anteriormente en los test"{
 	assert.equals([centralCarbon], springfield.sonContaminantes())
 }
+
+test "Teniendo las centrales anteriores, springfield cubrió su necesidad energética si ésta era de 20 Mkwh"{
+	springfield.necesidadSuministro(30)
+	assert.that(springfield.estaEnElHorno())
+}
