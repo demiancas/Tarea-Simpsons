@@ -1,57 +1,42 @@
 import LosSimpsons.*
 test "centralAtomica con 10 varillas produce 1 Mkwh en springfield" {
 	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
 	assert.equals(1,centralAtomica.produccionEnergetica())
 
 }
 
 test "centralCarbon con una capacidad de 20 toneladas produce 18.5 Mkwh en springfield" {
 	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	assert.equals(18.5,centralCarbon.produccionEnergetica())
+	assert.equals(18.5,centralCarbon.produccionEnergetica(springfield))
 }
 
 test "centralEolica produce 2 Mkwh en springfield"{
-	centralEolica.producirEnergia(springfield)
-	assert.equals(2,centralEolica.produccionEnergetica())
+	assert.equals(2,centralEolica.produccionEnergetica(springfield))
 	
 }
 
 test "las centrales contaminantes de sprinfield es una colección que adentro tiene sólo a centralCarbon, teniendo en cuenta los datos cargados anteriormente en los test"{
 	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
 	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	centralEolica.producirEnergia(springfield)
 	assert.equals([centralCarbon], springfield.sonContaminantes())
 }
 
 test "Teniendo las centrales anteriores, springfield cubrió su necesidad energética si ésta era de 20 Mkwh"{
 	springfield.necesidadSuministro(20)
 	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
 	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	centralEolica.producirEnergia(springfield)
 	assert.that(springfield.cumpleNecesidad())
 }
 
 test "Teniendo las centrales anteriores, springfield está al horno si posee una necesidad energética de 30 Mkwh"{
 	springfield.necesidadSuministro(30)
 	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
 	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	centralEolica.producirEnergia(springfield)
 	assert.that(springfield.estaEnElHorno())
 }
 
 test "Teniendo las centrales anteriores de springfield, las centrales más productoras de la región donde ésta se encuentra es una colección con centralCarbon de springfield y la centralHidroeléctrica de albuquerque."{
 	centralAtomica.cantVarillas(10)
-	centralAtomica.producirEnergia()
 	centralCarbon.capacidad(20)
-	centralCarbon.producirEnergia(springfield)
-	centralEolica.producirEnergia(springfield)
 	assert.equals([centralCarbon,centralHidroelectrica],regionSpringfield.centralMasProductoraPorCiudad())
 }
