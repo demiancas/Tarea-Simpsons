@@ -67,10 +67,6 @@ object albuquerque{
 //CENTRALES
 object centralAtomica {
 	var cantVarillas = 0
-	var produccionEnergetica = 0
-	method producirEnergia(){
-		produccionEnergetica += cantVarillas * 0.1
-	}
 	method cantVarillas(unasVarillas){
 		cantVarillas = unasVarillas
 	}
@@ -78,41 +74,32 @@ object centralAtomica {
 		return cantVarillas > 20
 	}
 	method produccionEnergetica(){
-		return produccionEnergetica
+		return cantVarillas * 0.1
 	}
 }
 object centralCarbon{
 	var capacidad = 0
-	var produccionEnergetica = 0
 	
 	method capacidad(unaCapacidad){
 		capacidad = unaCapacidad
 	}
-	method producirEnergia(ciudadQueSeEncuentra){
-		produccionEnergetica += (capacidad * ciudadQueSeEncuentra.riquezaSuelo()) + 0.5
-	}
 	method estaContaminando(){
 		return true
 	}
-	method produccionEnergetica(){
-		return produccionEnergetica
+	method produccionEnergetica(ciudadQueSeEncuentra){
+		return (capacidad * ciudadQueSeEncuentra.riquezaSuelo()) + 0.5
 	}
 }
 object centralEolica{
 	var turbinas = [turbina1]
-	var produccionEnergetica = 0
 	method agregarTurbina(unaTurbina){
 		turbinas.add(unaTurbina)
 	}
 	method estaContaminando(){
 		return false
 	}
-	method producirEnergia(ciudadQueSeEncuentra){
-		produccionEnergetica += turbinas.sum({unaTurbina=>unaTurbina.produccionTurbina(ciudadQueSeEncuentra)})
-		
-	}
-	method produccionEnergetica(){
-		return produccionEnergetica
+	method produccionEnergetica(ciudadQueSeEncuentra){
+		return turbinas.sum({unaTurbina=>unaTurbina.produccionTurbina(ciudadQueSeEncuentra)})
 	}
 }
 object turbina1{
@@ -121,11 +108,7 @@ object turbina1{
 	}		 
 }
 object centralHidroelectrica{
-	var produccionEnergetica = 0
-	method producirEnergia(ciudadQueSeEncuentra){
-		produccionEnergetica += 2 * ciudadQueSeEncuentra.caudalDeRio()
-	}
-	method produccionEnergetica(){
-		return produccionEnergetica
+	method produccionEnergetica(ciudadQueSeEncuentra){
+		return 2 * ciudadQueSeEncuentra.caudalDeRio()
 	}
 }
