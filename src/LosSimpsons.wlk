@@ -47,7 +47,7 @@ object springfield {
 		return centrales.max({unaCentral=>unaCentral.produccionEnergetica()})
 	}
 	method produccionTotal(listaDeCentrales){
-		return listaDeCentrales.map({unaCentral=>unaCentral.produccionEnergetica()}).sum()
+		return listaDeCentrales.sum({unaCentral=>unaCentral.produccionEnergetica()})
 	}
 }
 object albuquerque{
