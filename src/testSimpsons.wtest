@@ -1,7 +1,7 @@
 import LosSimpsons.*
 test "centralAtomica con 10 varillas produce 1 Mkwh en springfield" {
 	centralAtomica.cantVarillas(10)
-	assert.equals(1,centralAtomica.produccionEnergetica())
+	assert.equals(1,centralAtomica.produccionEnergetica(springfield))
 
 }
 
