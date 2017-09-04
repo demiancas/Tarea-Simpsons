@@ -14,9 +14,6 @@ object springfield {
 	var riquezaSuelo = 0.9
 	var necesidadSuministro = 0
 	var centrales = [centralAtomica,centralCarbon,centralEolica]
-	method produccionEnergetica(unaCentral){
-		return unaCentral.produccionEnergetica()
-	}
 	method sonContaminantes(){
 		return centrales.filter({unaCentral=> unaCentral.estaContaminando()})
 	}
@@ -34,10 +31,10 @@ object springfield {
 		return self.sonTodasContaminantes() || self.aportanMasDel50()
 	}
 	method cumpleNecesidad(){
-		return necesidadSuministro <= self.produccionTotal(centrales)
+		return necesidadSuministro <= self.produccionParcial(centrales)
 	}
 	method aportanMasDel50(){
-		return necesidadSuministro*0.5 <= self.produccionTotal(self.sonContaminantes())
+		return necesidadSuministro*0.5 <= self.produccionParcial(self.sonContaminantes())
 	
 	}
 	method sonTodasContaminantes(){
@@ -46,8 +43,8 @@ object springfield {
 	method centralMasProductora(){
 		return centrales.max({unaCentral=>unaCentral.produccionEnergetica()})
 	}
-	method produccionTotal(listaDeCentrales){
-		return listaDeCentrales.sum({unaCentral=>unaCentral.produccionEnergetica()})
+	method produccionParcial(listaDeCentrales){
+		return listaDeCentrales.sum({unaCentral=>unaCentral.produccionEnergetica(self)})
 	}
 }
 object albuquerque{
@@ -73,7 +70,7 @@ object centralAtomica {
 	method estaContaminando(){
 		return cantVarillas > 20
 	}
-	method produccionEnergetica(){
+	method produccionEnergetica(ciudadQueSeEncuentra){
 		return cantVarillas * 0.1
 	}
 }
